@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Weather App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fas fa-cloud-sun"></i>Bangthai Forecast</h1>
+      <p id="date"></p>
+      <form id="weatherForm">
+        <input type="text" id="cityInput" placeholder="Enter city name" />
+        <button type="submit"><i class="fas fa-search"></i> Search</button>
+      </form>
+      <div id="weatherData"></div>
+      <div class="city-temp">
+        <div class="city-box">
+          <h3><i class="fas fa-sun"></i> Dimapur</h3>
+          <p id="dimapurTemp"></p>
+        </div>
+        <div class="city-box">
+          <h3><i class="fas fa-cloud-sun"></i> Kohima</h3>
+          <p id="kohimaTemp"></p>
+        </div>
+        <div class="city-box">
+          <h3><i class="fas fa-cloud"></i> Mokokchung</h3>
+          <p id="mokokchungTemp"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const dateElement = document.getElementById("date");
+      const currentDate = new Date().toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      dateElement.textContent = currentDate;
+
+      window.addEventListener("DOMContentLoaded", fetchTemperatures);
+
+      function fetchTemperatures() {
+        const cities = ["dimapur", "kohima", "mokokchung"];
+        cities.forEach((city) => {
+          fetchTemperature(city);
+        });
+      }
+
+      function fetchTemperature(city) {
+        fetch("/weather", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `city=${encodeURIComponent(city)}`,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (!data.error) {
+              const temperature = data.temperature;
+              const cityName = city.toLowerCase();
+
+              if (cityName === "dimapur") {
+                dimapurTempDiv.textContent = `${temperature}°C`;
+              } else if (cityName === "kohima") {
+                kohimaTempDiv.textContent = `${temperature}°C`;
+              } else if (cityName === "mokokchung") {
+                mokokchungTempDiv.textContent = `${temperature}°C`;
+              }
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    </script>
+  </body>
+</html>

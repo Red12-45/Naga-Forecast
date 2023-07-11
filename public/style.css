@@ -1,0 +1,203 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin-top: 3%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+}
+
+/* Date Styles */
+#date {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #666666;
+}
+
+/* Form Styles */
+#weatherForm {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#cityInput {
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Weather Data Styles */
+#weatherData {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.city-temp {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.city-box {
+  width: 200px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #333333;
+}
+
+p {
+  margin: 0;
+  font-size: 24px;
+  color: #333333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 2s ease;
+}
+
+.city-box {
+  animation: slideInFromTop 2s ease;
+  animation-delay: 0.1s;
+}
+
+/* Additional Weather App CSS */
+
+/* Global Styles */
+.container {
+  position: relative;
+}
+
+/* Form Styles */
+#cityInput::placeholder {
+  color: #999999;
+}
+
+button[type="submit"] {
+  font-weight: bold;
+}
+
+/* Weather Data Styles */
+#weatherData {
+  margin-top: 30px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.city-temp {
+  flex-wrap: wrap;
+}
+
+.city-box {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.city-box:hover {
+  transform: scale(1.05);
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 32px;
+}
+
+/* Additional Styling... */
+
+/* Additional Weather App CSS */
+
+/* Form Styles */
+#cityInput {
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+#cityInput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Styling... */
