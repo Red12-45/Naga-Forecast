@@ -1,14 +1,15 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+
   margin-top: 3%;
+  background-color: #646363;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #c4c1c1;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
